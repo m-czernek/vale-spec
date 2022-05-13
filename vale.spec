@@ -7,9 +7,6 @@ License:       MIT
 URL:           https://github.com/errata-ai/vale 
 Source0:       https://github.com/errata-ai/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux_64-bit.tar.gz 
 
-#BuildRequires:  
-#Requires:       
-
 %description
 Vale is a CLI linter for collaborative writing. Vale enables you to parse a variety of markup-formatted files, such as Markdown, AsciiDoc, reStructuredText, HTML, or XML, and impose proper spelling or style guide.
 
