@@ -1,5 +1,5 @@
 Name:           vale
-Version:        2.17.0
+Version:        2.18.0
 Release:        1%{?dist}
 Summary:        A syntax-aware, command-line linter for prose built with speed and extensibility in mind.
 
