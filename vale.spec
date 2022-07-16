@@ -4,11 +4,16 @@ Release:       1%{?dist}
 Summary:       A syntax-aware, command-line linter for prose
 License:       MIT
 URL:           https://github.com/errata-ai/vale
-Source0:       https://github.com/errata-ai/%{name}/releases/download/v%{version}/%{name}_%{version}_Linux_64-bit.tar.gz
+Source0:       https://github.com/errata-ai/vale/archive/refs/tags/v%{version}.tar.gz
+BuildRequires: golang, git
 
 # Workaround for Golang missing build IDs
 # https://github.com/tpokorra/lbs-mono-fedora/issues/3#issuecomment-219857688
 %undefine _missing_build_ids_terminate_build
+
+# Workaround for error: Empty files file
+# https://lists.opensuse.org/archives/list/buildservice@lists.opensuse.org/message/C3LSCEDT5INK3PCFM3MXWD3B7IUJ32L2/
+%global debug_package %{nil}
 
 %description
 Vale is a CLI linter for collaborative writing.
@@ -18,16 +23,17 @@ AsciiDoc, reStructuredText, HTML, or XML,
 and impose proper spelling or style guide.
 
 %prep
-%setup -qc
+%setup -q
+
+%build
+%make_build
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
 mkdir -p ${RPM_BUILD_ROOT}/%{_bindir}
-install -m 0755 %{name} ${RPM_BUILD_ROOT}/%{_bindir}/%{name}
-# Workaround for rpmlint issue script-without-shebang
-# https://fedoraproject.org/wiki/Common_Rpmlint_issues#script-without-shebang
-# Also fixing spurious-executable-perm on README.md
-chmod -x LICENSE README.md
+install -m 0755 bin/%{name} ${RPM_BUILD_ROOT}/%{_bindir}/%{name}
+# Workaround for W: spurious-executable-perm and
+# E: script-without-shebang linting errors
+chmod -x README.md LICENSE
 
 %files
 %license LICENSE
