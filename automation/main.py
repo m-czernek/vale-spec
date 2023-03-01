@@ -48,7 +48,7 @@ def commit_changes():
     
     repo.index.add([SPEC])
     repo.index.commit("feat: Update package version")
-    # repo.remotes[0].push()
+    repo.remotes[0].push()
 
 
 if __name__ == '__main__':
