@@ -4,11 +4,13 @@ import requests
 from pyrpm.spec import Spec
 from packaging import version
 from git.repo import Repo
+import pathlib
 
 
 API = "https://api.github.com"
 SPEC="vale.spec"
-SPEC_PATH=f"../{SPEC}"
+# resolves to ./../vale.spec
+SPEC_PATH=pathlib.Path(__file__).parent.parent.joinpath(SPEC)
 
 def get_latest_version() -> str:
     owner = "errata-ai"
