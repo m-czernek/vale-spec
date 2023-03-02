@@ -9,8 +9,9 @@ import pathlib
 
 API = "https://api.github.com"
 SPEC="vale.spec"
-# resolves to ./../vale.spec
-SPEC_PATH=pathlib.Path(__file__).parent.parent.joinpath(SPEC)
+# resolves to ./../
+PARENT_PATH=pathlib.Path(__file__).parent.parent
+SPEC_PATH=PARENT_PATH.joinpath(SPEC)
 
 def get_latest_version() -> str:
     owner = "errata-ai"
@@ -43,7 +44,7 @@ def update_version() -> bool:
 
 
 def commit_changes():
-    repo = Repo('..')
+    repo = Repo(PARENT_PATH)
 
     if repo.active_branch.name != "main":
         repo.heads.main.checkout()
