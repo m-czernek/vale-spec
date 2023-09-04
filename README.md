@@ -5,10 +5,11 @@ This repository is a community maintained SPEC file for the
 
 ## Installing Vale
 
-On Fedora and CentOS, you can enable the `mczernek/vale` COPR repository and install the `vale` package:
+On Fedora and CentOS, you can enable the `obriend/Vale4RedHat` COPR repository and install the `vale` package:
+
 
 ```
-dnf copr enable mczernek/vale
+dnf copr enable obriend/Vale4RedHat
 dnf install vale
 ```
 
