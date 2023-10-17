@@ -14,7 +14,7 @@ dnf install vale
 ```
 
 On other systems, download and install the RPM manually.
-You can either build the RPM, or download the RPM from the [COPR repository](https://copr.fedorainfracloud.org/coprs/mczernek/vale/).
+You can either build the RPM or download the RPM from the [COPR repository](https://copr.fedorainfracloud.org/coprs/mczernek/vale/).
 
 ## Filing Bugs
 
