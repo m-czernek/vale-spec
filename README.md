@@ -1,3 +1,7 @@
+# Archived Repository
+
+This repository is now archived. The [COPR repository](https://copr.fedorainfracloud.org/coprs/mczernek/vale/) now uses the https://github.com/daobrien/vale-spec fork as the build source. 
+
 # Vale
 
 This repository is a community maintained SPEC file for the 
